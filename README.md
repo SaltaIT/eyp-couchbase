@@ -45,13 +45,7 @@ etc.), mention it here.
 
 ### Beginning with couchbase
 
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
-
-## Usage
+basic couchbase setup:
 
 ```puppet
 class { 'couchbase':
@@ -61,27 +55,23 @@ class { 'couchbase':
 couchbase::backupscript { 'backups':
   destination => '/backup',
 }
+
+class { 'couchbase::monitscripts': }
 ```
 
+## Usage
+
+TODO
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+TODO
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Tested on Ubuntu 14.04
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+We are pushing to have acceptance testing in place, so any new feature should
+have some test to check both presence and absence of any feature
