@@ -47,22 +47,22 @@ class couchbase (
     require => [ Package[$package_name], File[$datadir] ],
   }
 
-  if(defined(Class['logrotate']))
-  {
-    logrotate::logs { 'couchdb':
-      custom_file   => '/opt/couchbase/etc/logrotate.d/couchdb',
-      log           => '/opt/couchbase/var/log/couchdb/*.log',
-      frequency     => 'weekly',
-      rotate        => '10',
-      copytruncate  => true,
-      delaycompress => true,
-      compress      => true,
-      notifempty    => true,
-      missingok     => true,
-      create_mode   => '0664',
-      create_owner  => 'couchbase',
-      create_group  => 'couchbase',
-    }
-  }
+  # if(defined(Class['logrotate']))
+  # {
+  #   logrotate::logs { 'couchdb':
+  #     custom_file   => '/opt/couchbase/etc/logrotate.d/couchdb',
+  #     log           => '/opt/couchbase/var/log/couchdb/*.log',
+  #     frequency     => 'weekly',
+  #     rotate        => '10',
+  #     copytruncate  => true,
+  #     delaycompress => true,
+  #     compress      => true,
+  #     notifempty    => true,
+  #     missingok     => true,
+  #     create_mode   => '0664',
+  #     create_owner  => 'couchbase',
+  #     create_group  => 'couchbase',
+  #   }
+  # }
 
 }
