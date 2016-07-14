@@ -50,18 +50,18 @@ class couchbase (
   if(defined(Class['logrotate']))
   {
     logrotate::logs { 'couchdb':
-      custom_file => '/opt/couchbase/etc/logrotate.d/couchdb',
-      log => '/opt/couchbase/var/log/couchdb/*.log',
-      frequency => 'weekly'
-      rotate => '10',
-      copytruncate => true,
+      custom_file   => '/opt/couchbase/etc/logrotate.d/couchdb',
+      log           => '/opt/couchbase/var/log/couchdb/*.log',
+      frequency     => 'weekly'
+      rotate        => '10',
+      copytruncate  => true,
       delaycompress => true,
-      compress => true,
-      notifempty => true,
-      missingok => true,
-      create_mode => '0777',
-      create_user => '',
-      create_group => '',
+      compress      => true,
+      notifempty    => true,
+      missingok     => true,
+      create_mode   => '0664',
+      create_user   => 'couchbase',
+      create_group  => 'couchbase',
     }
   }
 
