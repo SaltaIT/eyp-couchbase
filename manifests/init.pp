@@ -52,7 +52,7 @@ class couchbase (
     logrotate::logs { 'couchdb':
       custom_file   => '/opt/couchbase/etc/logrotate.d/couchdb',
       log           => '/opt/couchbase/var/log/couchdb/*.log',
-      frequency     => 'weekly'
+      frequency     => 'weekly',
       rotate        => '10',
       copytruncate  => true,
       delaycompress => true,
