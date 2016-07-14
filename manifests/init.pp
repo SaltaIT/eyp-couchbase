@@ -60,7 +60,7 @@ class couchbase (
       notifempty    => true,
       missingok     => true,
       create_mode   => '0664',
-      create_user   => 'couchbase',
+      create_owner  => 'couchbase',
       create_group  => 'couchbase',
     }
   }
